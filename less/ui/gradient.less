@@ -1,0 +1,24 @@
+
+
+/* Linear Gradients 2  Color */
+
+.gradient-left(   @cs1, @cs2 ) { .gradient-std-linear( to right,  @cs1, @cs2 ); }
+.gradient-top(    @cs1, @cs2 ) { .gradient-std-linear( to bottom, @cs1, @cs2 ); }
+.gradient-right(  @cs1, @cs2 ) { .gradient-std-linear( to left,   @cs1, @cs2 ); }
+.gradient-bottom( @cs1, @cs2 ) { .gradient-std-linear( to top,    @cs1, @cs2 ); }
+
+.gradient-std-linear( @dir, @cs1, @cs2 ) {  background-image: linear-gradient(@dir,@cs1,@cs2); }
+
+/* Center and corner radial gradients */
+
+.gradient-center( @cs1, @cs2 ) { .gradient-std-radial( center, center, farthest-corner, @cs1, @cs2 ); }
+.gradient-nw    ( @cs1, @cs2 ) { .gradient-std-radial( right,  bottom, farthest-side,   @cs2, @cs1 ); }
+.gradient-ne    ( @cs1, @cs2 ) { .gradient-std-radial( left,   bottom, farthest-side,   @cs2, @cs1 ); }
+.gradient-sw    ( @cs1, @cs2 ) { .gradient-std-radial( right,  top,    farthest-side,   @cs2, @cs1 ); }
+.gradient-se    ( @cs1, @cs2 ) { .gradient-std-radial( left,   top,    farthest-side,   @cs2, @cs1 ); }
+
+.gradient-std-radial( @posh, @posv, @extent, @cs1, @cs2 )
+  {  background-image: radial-gradient( ellipse @extent at @posh @posv, @cs1, @cs2 ); }
+
+
+

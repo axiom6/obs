@@ -1,0 +1,75 @@
+
+@import "color.less";
+@import "mixin.less";
+@import "gradient.less";
+
+.tocs-ul1{ background:transparent; }                     .tocs-li1{ background-color:@color-back20; }
+.tocs-ul2{ .gradient-top(@color-back80,@color-back90); } .tocs-li2{ background-color:@color-back30; }
+.tocs-ul3{ .gradient-top(@color-back80,@color-back90); } .tocs-li3{ background-color:@color-back40; }
+.tocs-ul4{ .gradient-top(@color-back80,@color-back90); } .tocs-li4{ background-color:@color-back50; }
+
+.tocs-li1b{ .gradient-top(@color-back70,@color-back75); }
+
+@toc-radius:10px;
+
+.tocs                                         {  padding-top:24px;  } // background:@color-back15;
+.tocs > div                                   {  }
+.tocs   ul                                    { .mixin-paddings(    0,    0,0,    0); list-style: none none; margin: 0;  }
+.tocs   ul > li                               { .mixin-paddings(0.5em,0.2em,0,0.2em); }
+.tocs   ul > li > ul                          { .mixin-paddings(    0,    0,0,    0); list-style: none none; margin: 0; display:none; }
+.tocs   ul > li > ul > li                     { .mixin-paddings(1.3em,0.2em,0,0.2em); }
+.tocs   ul > li > ul > li > ul                { .mixin-paddings(    0,    0,0,    0); list-style: none none; margin: 0; display:none; }
+.tocs   ul > li > ul > li > ul > li           { .mixin-paddings(1.3em,0.2em,0,0.2em); }
+.tocs   ul > li > ul > li > ul > li > ul      { .mixin-paddings(    0,    0,0,    0); list-style: none none; margin: 0; display:none; }
+.tocs   ul > li > ul > li > ul > li > ul > li { .mixin-paddings(1.3em,0.2em,0,0.2em); }
+
+.tocs   ul li:hover { .mixin-hover-tocs; }
+.tocs   ul li       {   }
+
+@tocs-color:#000000;
+@tocs-navb-height:28px;
+@tocs-menu-height:28px;
+@tocs-ul-height: (@tocs-menu-height * 0.25) - 1px;
+@tocs-li-height: (@tocs-menu-height * 0.25) - 2px;
+@tocs-menu-half:  @tocs-menu-height * 0.5;
+
+.tocs-font{ font-family:Arial, Helvetica, sans-serif; }
+
+.tocs-1 > div { color:@tocs-color; .tocs-font; width:100%; height:100%; }
+.tocs-1 > ul  { list-style: none none; margin: 0; padding:0; .tocs-ul1; height:100%;  }
+
+
+.tocs-1 ul > li:hover { .tocs-li1; }
+.tocs-1 ul > li       { position:relative; left:0;  top:@tocs-li-height; display:block;
+                        font-size:@tocs-menu-half; padding:@tocs-li-height; margin-right:@tocs-menu-half;
+                        font-weight:bold; .mixin-round-top(8px); .tocs-li1b; }
+.tocs-1 ul > li > div { display:inline; }
+
+.tocs-1 ul > li:hover > ul { display:block; }
+.tocs-1 ul > li       > ul { display:block; position:absolute; left:0; top:@tocs-menu-height; .mixin-paddings(6px,6px,0,6px);
+                             .tocs-ul2; z-index:100;  .mixin-round-bottom(8px); }
+
+.tocs-1 ul > li:hover > ul:hover > li:hover    { .mixin-round-left(8px); .tocs-li2; }
+.tocs-1 ul > li:hover > ul:hover > .only:hover { .mixin-round(8px);      .tocs-li2; }
+.tocs-1 ul > li       > ul       > li          {  display:block; position:relative; .mixin-paddings(4px,4px,10px,4px); z-index:200;
+                                                font-size:0.8em; font-weight:bold; }
+.tocs-1 ul > li       > ul       > .only       {  padding-right:4px; margin-right:6px; }
+
+
+.tocs-1 ul > li:hover > ul:hover > li:hover > ul    {  display:block; }
+.tocs-1 ul > li:hover > ul:hover > li:hover > .only { .mixin-round-right(8px); }
+.tocs-1 ul > li       > ul       > li       > ul    {  display:none; position:absolute; left:100%; top:-6px; width:auto;
+                                                    .mixin-paddings(0,6px,0,6px); .tocs-ul3;  z-index:100; }
+.tocs-1 ul > li       > ul       > li       > .only { .mixin-round-right(8px); }
+
+.tocs-1 ul > li:hover > ul:hover > li:hover > ul:hover > li:hover    { display:block; .tocs-li3;  }
+.tocs-1 ul > li:hover > ul:hover > li:hover > ul:hover > .only:hover { .mixin-round-right(8px); }
+.tocs-1 ul > li       > ul        > li      > ul       > li          { .mixin-paddings(10px,4px,10px,4px); z-index:200; }
+.tocs-1 ul > li       > ul        > li      > ul       > .only       {  padding-right:4px; margin-right:6px; }
+
+.tocs-1 ul > li:hover > ul:hover > li:hover > ul > li:hover > ul { display:block; }
+.tocs-1 ul > li       > ul       > li       > ul > li       > ul { display:none; position:absolute; left:100%; top:0; width:auto;
+                                                                .mixin-paddings(0,6px,6px,6px); .tocs-ul4; z-index:100; .mixin-round-right(8px); }
+
+.tocs-1 ul > li:hover > ul:hover > li:hover > ul:hover > li:hover > ul:hover > li:hover { display:block; .tocs-li4; .mixin-round-right(8px); }
+.tocs-1 ul > li       > ul        > li      > ul       > li       > ul       > li       { .mixin-paddings(10px,4px,4px,4px); z-index:200; }

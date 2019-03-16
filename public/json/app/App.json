@@ -1,0 +1,20 @@
+{
+  "Trust":     { "name":"Trust", "type":"pane", "hsv":[195,90,70], "column":"Embrace",  "row":"Learn",
+    "plane":"Wisdom", "icon":"fas fa-universal-access", "cells":[ 1,12, 1,12] },
+  "Nature":    { "name":"Nature","type":"pane", "hsv":[ 45,90,90], "column":"Innovate", "row":"Learn",
+    "plane":"Wisdom", "icon":"fas fa-paint-brush",      "cells":[13,12, 1,12] },
+  "Truth":     { "name":"Truth","type":"pane", "hsv":[ 20,50,90], "column":"Encourage","row":"Learn",
+    "plane":"Wisdom", "icon":"fas fa-gift",             "cells":[25,12, 1,12] },
+  "Experience":{ "name":"Experience","type":"pane", "hsv":[195,90,70], "column":"Embrace",  "row":"Do",
+    "plane":"Wisdom", "icon":"fas fa-blind",            "cells":[ 1,12,13,12] },
+  "Create":    { "name":"Create","type":"pane", "hsv":[ 45,90,90], "column":"Innovate", "row":"Do",
+    "plane":"Wisdom", "icon":"fas fa-eye",              "cells":[13,12,13,12] },
+  "Conscience":{ "name":"Conscience","type":"pane", "hsv":[ 20,50,90], "column":"Encourage","row":"Do",
+    "plane":"Wisdom", "icon":"fab fa-connectdevelop",   "cells":[25,12,13,12] },
+  "Emerge":    { "name":"Emerge","type":"pane", "hsv":[195,90,70], "column":"Embrace",  "row":"Share",
+    "plane":"Wisdom", "icon":"fab fa-dropbox",          "cells":[ 1,12,25,12] },
+  "Inspire":   { "name":"Inspire","type":"pane", "hsv":[ 45,90,90], "column":"Innovate", "row":"Share",
+    "plane":"Wisdom", "icon":"fas fa-fire",             "cells":[13,12,25,12] },
+  "Actualize": { "name":"Actualize","type":"pane", "hsv":[ 20,50,90], "column":"Encourage","row":"Share",
+    "plane":"Wisdom", "icon":"fab fa-pied-piper",       "cells":[25,12,25,12] }
+}

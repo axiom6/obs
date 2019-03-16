@@ -1,0 +1,132 @@
+
+
+@import "vars.less";
+
+//@color-hue:330; @color-sat:40%; @color-lit:40%; @color-inc:12%;
+
+
+// Hue Saturation background palette in 5% lightness increments
+@color-back00:hsl(@color-hue,@color-sat,00%); @color-back05:hsl(@color-hue,@color-sat, 5%); @color-back10:hsl(@color-hue,@color-sat,10%); @color-back15:hsl(@color-hue,@color-sat,15%);
+@color-back20:hsl(@color-hue,@color-sat,20%); @color-back25:hsl(@color-hue,@color-sat,25%); @color-back30:hsl(@color-hue,@color-sat,30%); @color-back35:hsl(@color-hue,@color-sat,35%);
+@color-back40:hsl(@color-hue,@color-sat,40%); @color-back45:hsl(@color-hue,@color-sat,45%); @color-back50:hsl(@color-hue,@color-sat,50%); @color-back55:hsl(@color-hue,@color-sat,55%);
+@color-back60:hsl(@color-hue,@color-sat,60%); @color-back65:hsl(@color-hue,@color-sat,65%); @color-back70:hsl(@color-hue,@color-sat,70%); @color-back75:hsl(@color-hue,@color-sat,75%);
+@color-back80:hsl(@color-hue,@color-sat,80%); @color-back85:hsl(@color-hue,@color-sat,85%); @color-back90:hsl(@color-hue,@color-sat,90%); @color-back95:hsl(@color-hue,@color-sat,95%);
+
+@color-darker-dark:@color-back20; @color-darker-lite:@color-back30;
+@color-darker-view:@color-back15; @color-darker-stat:@color-back10;
+
+// Gray Scale in 5% lightness increments
+@color-gray00:hsl(0,0,00%); @color-gray05:hsl(0,0, 5%); @color-gray10:hsl(0,0,10%); @color-gray15:hsl(0,0,15%);
+@color-gray20:hsl(0,0,20%); @color-gray25:hsl(0,0,25%); @color-gray30:hsl(0,0,30%); @color-gray35:hsl(0,0,35%);
+@color-gray40:hsl(0,0,40%); @color-gray45:hsl(0,0,45%); @color-gray50:hsl(0,0,50%); @color-gray55:hsl(0,0,55%);
+@color-gray60:hsl(0,0,60%); @color-gray65:hsl(0,0,65%); @color-gray70:hsl(0,0,70%); @color-gray75:hsl(0,0,75%);
+@color-gray80:hsl(0,0,80%); @color-gray85:hsl(0,0,85%); @color-gray90:hsl(0,0,90%); @color-gray95:hsl(0,0,95%);
+
+// HTML Gray Scale         108              128              192                 211                 220            256
+@color-black:#000000; @color-dim-gray:#696969; @color-gray:#808080; @color-silver:#C0C0C0; @color-light-gray:#D3D3D3; @color-gainsboro:#DCDCDC; @color-white:#FFFFFF;
+
+// Accent Colors
+@color-blue:#049CDB; @color-green:#46a546; @color-red:#9d261d; @color-yellow:#ffc40d; @color-orange1:#f89406; @color-pink:#c3325f; @color-purple:#7a43b6;
+
+@color-turquoise:rgba(26, 188, 156,1.0);   @color-green-sea:rgba(22, 160, 133,1.0);   @color-emerland:rgba(46, 204, 113,1.0);    @color-nephritis:rgba(39, 174, 96,1.0);
+@color-peter-river:rgba(52, 152, 219,1.0); @color-belize-hole:rgba(41, 128, 185,1.0); @color-amethyst:rgba(155, 89, 182,1.0);    @color-wisteria:rgba(142, 68, 173,1.0);
+@color-sun-flower:rgba(241, 196, 15,1.0);  @color-orange:rgba(243, 156, 18,1.0);      @color-carrot:rgba(230, 126, 34,1.0);      @color-pumpkin:rgba(211, 84, 0,1.0);    @color-alizarin:rgba(231, 76, 60,1.0);     @color-pomegranate:rgba(192, 57, 43,1.0);
+@color-clouds:rgba(236, 240, 241,1.0);     @color-silver2:rgba(189, 195, 199,1.0);    @color-concrete:rgba(149, 165, 166,1.0);   @color-asbestos:rgba(127, 140, 141,1.0); @color-wet-asphalt:rgba(52, 73, 94,1.0);  @color-midnight-blue:rgba(44, 62, 80,1.0);
+
+@color-shad:hsl(@color-hue,@color-sat,@color-lit       );
+@color-dark:hsl(@color-hue,@color-sat,@color-lit+@color-inc*2);      // 50%
+@color-midd:hsl(@color-hue,@color-sat,@color-lit+@color-inc*3);
+@color-lite:hsl(@color-hue,@color-sat,@color-lit+@color-inc*4);
+@color-edge:hsl(@color-hue,@color-sat,@color-lit+@color-inc*4.5);
+@color-back:hsl(@color-hue,@color-sat,@color-lit+@color-inc*5);
+@color-side:hsl(@color-hue,@color-sat,@color-lit+@color-inc*5.5);
+@color-bord:#000000;
+@color-menu:#000000;
+
+
+@color-wheel-seed:#8171ad; // This color is used to generate the scheme
+
+
+// Change these for different contrast cutoff points
+@color-luma-upper-break:80%;
+@color-luma-lower-break:16%;
+
+//// Relative changes to subcolors (lightness, saturation)
+// Customize these for different relative a, b and c colors
+
+
+@color-contrast:1;
+
+@color-a-sat:8%*@color-contrast;
+@color-a-lit:-15%*@color-contrast;
+
+@color-b-sat:7%*@color-contrast;
+@color-b-lit:-5%*@color-contrast;
+
+@color-c-sat:-3%*@color-contrast;
+@color-c-lit:8%*@color-contrast;
+
+
+@color-sat:saturation( @color-wheel-seed );
+@color-luma:luma(      @color-wheel-seed );
+@color-lit:lightness(  @color-wheel-seed );
+@color-tone:desaturate(@color-wheel-seed,100%);
+
+// Color wheel positions  Uncomment the color wheel you want to use
+  @color-wheel_pos1: 45; @color-wheel_pos2:315; @color-wheel_pos3:180; // Accented analogue (default)
+//@color-wheel_pos1: 30; @color-wheel_pos2:180; @color-wheel_pos3:210; // Tetrad
+//@color-wheel_pos1:120; @color-wheel_pos2:240; @color-wheel_pos3:180; // Triad
+//@color-wheel_pos1:180; @color-wheel_pos2:  0; @color-wheel_pos3:180; // Compliment
+//@color-wheel_pos1:  8; @color-wheel_pos2:352; @color-wheel_pos3:  0; // Monochrome
+
+
+//This makes the scheme's colors using the wheel positions
+
+@color-l-factor:@color-luma; // what we'll use for the L in HSL
+
+@color-1q:@color-wheel-seed;
+@color-1theme:hsl(hue(spin(@color-wheel-seed,0)),@color-sat,@color-l-factor); // a color 1 alternate, to keep a, b and c colors consistent
+
+@color-1a:lighten(saturate(@color-1theme,@color-a-sat), @color-a-lit);
+@color-1b:lighten(saturate(@color-1theme,@color-b-sat), @color-b-lit);
+@color-1c:lighten(saturate(@color-1theme,@color-c-sat), @color-c-lit);
+
+@color-2q:hsl(hue(spin(@color-wheel-seed,@color-wheel_pos1)),@color-sat,@color-l-factor);
+
+@color-2a:lighten(saturate(@color-2q,@color-a-sat), @color-a-lit);
+@color-2b:lighten(saturate(@color-2q,@color-b-sat), @color-b-lit);
+@color-2c:lighten(saturate(@color-2q,@color-c-sat), @color-c-lit);
+
+@color-3q:hsl(hue(spin(@color-wheel-seed,@color-wheel_pos2)),@color-sat,@color-l-factor);
+
+@color-3a:lighten(saturate(@color-3q,@color-a-sat), @color-a-lit);
+@color-3b:lighten(saturate(@color-3q,@color-b-sat), @color-b-lit);
+@color-3c:lighten(saturate(@color-3q,@color-c-sat), @color-c-lit);
+
+@color-4q:hsl(hue(spin(@color-wheel-seed,@color-wheel_pos3)),@color-sat,@color-l-factor);
+
+@color-4a:lighten(saturate(@color-4q,@color-a-sat), @color-a-lit);
+@color-4b:lighten(saturate(@color-4q,@color-b-sat), @color-b-lit);
+@color-4c:lighten(saturate(@color-4q,@color-c-sat), @color-c-lit);
+
+// contrasts text against a given background color
+/*
+.contrast (@color) when (luma(@color) >= @luma-upper-break) {
+  //darker text for lighter backgrounds
+  color:average(darken(@color,30%),#222); }
+*/
+.color-contrast (@color) when (color-luma(@color) < @color-luma-upper-break) {
+  //white text for everything else
+  color:#ffffff; }
+
+
+// brings outside colors more in line with the current scheme
+//schemifies a background color
+.color-schemify(@color) { @mix-weight:60%; @new-color:mix(hsl(hue(@color),@color-sat,@color-luma),@color,@mix-weight);
+  background:@new-color; .color-contrast(@new-color); }
+
+.color-schemify-text(@color) { @mix-weight:60%; @new-color:mix(hsl(hue(@color),@color-sat,@color-luma),@color,@mix-weight);
+  color:@new-color; .color-contrast(@color); }
+
+
+

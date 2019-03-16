@@ -1,0 +1,256 @@
+
+.study-font{ font-family:Roboto, sans-serif; color:black; }
+
+.study-all     { position:relative;  left:5%;  top:0;   width: 90%; height:100%; display:block; font-size:2.0vmin; }
+.study-plane   { position:absolute;  left:0;   top:0;   width:100%; height:100%; border-radius:24px; overflow:hidden; display:grid; }
+.study-prac    { position:absolute;  left:33%; top:33%; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-west    { position:absolute;  left: 0;  top:33%; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-east    { position:absolute;  left:66%; top:33%; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-north   { position:absolute;  left:33%; top: 0;  width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-south   { position:absolute;  left:33%; top:66%; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-southd  { position:absolute;  left:25%; top:70%; width: 50%; height: 28%; border-radius:24px; overflow:hidden; display:grid; }
+.study-nw      { position:absolute;  left: 0;  top: 0;  width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-ne      { position:absolute;  left:66%; top: 0;  width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-sw      { position:absolute;  left:  0; top:66%; width: 33%; height: 28%; border-radius:24px; overflow:hidden; display:grid; }
+.study-se      { position:absolute;  left:66%; top:66%; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-learn   { position:absolute;  left: 0;  top:  0; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-do      { position:absolute;  left: 0;  top:33%; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+.study-share   { position:absolute;  left: 0;  top:66%; width: 33%; height: 33%; border-radius:24px; overflow:hidden; display:grid; }
+
+// border-radius: top-left top-right bottom-left bottom-right
+
+.ui-plane {
+  .study-prac  { position:absolute; left:0; top:0; width:100%; height:100%; border-radius:24px; overflow:hidden; display:grid; } }
+
+.ui-rows {
+  .study-prac  { position:absolute; left:0; top:0; width:100%; height:100%; border-radius:24px; overflow:hidden; display:grid; } }
+
+.ui-dims{
+  .study-prac  { border-radius: 0 0 0 0; } }
+
+.ui-dims, .ui-rows {
+  .study-west  { border-radius: 24px  0    0   24px; }
+  .study-east  { border-radius:  0   24px 24px  0;   }
+  .study-north { border-radius: 24px 24px  0    0;   }
+  .study-south { border-radius:  0    0   24px 24px; } }
+
+.pract-wrap    {}
+
+.pract-plane  {   justify-self:stretch; align-self:stretch; display:grid;
+  .pract-bloc    { justify-self:center;  align-self:center; .study-font; line-height:0.8; text-align:center; }
+  .pract-icon    { font-size:3.5vh; }
+  .pract-text    { font-size:2.5vh; font-weight:bold; }
+  .pract-abst    { display:none; } }
+
+.pract-plane2  {   justify-self:stretch; align-self:stretch; display:grid;
+  .pract-bloc    { justify-self:center;  align-self:center; .study-font; line-height:0.8; }
+  .pract-icon    { text-align:left; font-size:4.0vh; }
+  .pract-text    { text-align:left; font-size:4.0vh; font-weight:bold; }
+  .pract-abst    { display:none; } }
+
+.pract-dims    {   justify-self:stretch; align-self:stretch; display:grid;
+  .pract-bloc    { justify-self:center;  align-self:center; .study-font; line-height:0.0; }
+  .pract-icon    { text-align:left; font-size:1.9vh; }
+  .pract-text    { text-align:left; font-size:1.9vh; font-weight:bold; }
+  .pract-abst    { display:none; } }
+
+.pract-rows    { justify-self:stretch; align-self:stretch; display:grid;
+  .pract-bloc    { justify-self:center;  align-self:center;  .study-font; line-height:0.8; text-align:center; }
+  .pract-icon    { font-size:3.5vh; }
+  .pract-text    { font-size:2.5vh; font-weight:bold; }
+  .pract-abst    { display:none; } }
+
+.pract-study  {   justify-self:stretch; align-self:stretch; display:grid;
+  .pract-bloc    { justify-self:center;  align-self:center; .study-font; line-height:0.8;  text-align:center; }
+  .pract-icon    { font-size:2.0vh; display:block; }
+  .pract-text    { font-size:2.0vh; font-weight:bold; }
+  .pract-abst    { display:none; } }
+
+.pract-topic    { justify-self:stretch; align-self:stretch; display:grid;
+  .pract-bloc    { justify-self:center;  align-self:center;  .study-font; line-height:0.8; text-align:center; }
+  .pract-icon    { font-size:2.0vh; }
+  .pract-text    { font-size:2.0vh; font-weight:bold; }
+  .pract-abst    { display:none; } }
+
+.pract-pane    { justify-self:stretch; align-self:stretch; display:grid;
+  .pract-bloc    { justify-self:center;  align-self:center;  .study-font; line-height:0.8; text-align:center; }
+  .pract-icon    { font-size:4.0vh; }
+  .pract-text    { font-size:4.0vh; font-weight:bold; }
+  .pract-abst    { font-size:2.0vh; font-weight:bold; text-align:left; padding:1.0vh; } }
+
+.study-wrap    { } // Replace by core with view pane stud grid
+.study-core    { text-align:left; font-weight:bold;  .study-font; }
+.topic-core    { line-height:0.8; text-align:left;  }
+.topic-ul-core { line-height:0.8; text-align:left;  list-style:none; }
+.topic-li-core { line-height:0.8; text-align:left;  list-style:none; }
+.items-core    { line-height:0.6; padding-left:1em; }
+.items-ul-core { line-height:0.6; padding-left:1em; list-style:none; }
+.items-li-core { line-height:0.6; padding-left:1em; list-style:none; }
+
+.study-dims  { .study-core; justify-self:stretch; align-self:stretch; display:grid;
+  .study-bloc  { justify-self:center; align-self:center; font-size:2.0vh; .study-font; }
+  .study-icon  { text-align:left; font-size:2.0vh; }
+  .study-text  { text-align:left; font-size:2.0vh; line-height:1.0;    }
+  .study-desc  { display:none; }
+  .topic-bloc  { .topic-core;         font-size:1.5vh; padding-left:2.0vh; margin-top:0.3vh; display:none; }
+  .topic-ul    { .topic-ul-core;      font-size:1.5vh; padding-left:2.0vh; }
+  .topic-li    { .topic-li-core;      font-size:1.5vh; padding-top:0; display:grid; }
+  .topic-icon  { justify-self:center; font-size:1.5vh; padding-left:0.6vh; }
+  .topic-text  { justify-self:center; font-size:1.5vh; line-height:1.0;    }
+  .topic-desc  { display:none; }
+  .topic-img   { display:none; }
+  .items-ul    { .items-ul-core;      font-size:1.1vh; }
+  .items-li    { .items-li-core;      font-size:1.1vh; display:grid; }
+  .items-icon  { justify-self:center; font-size:2.0vh; padding-left:0.6vh; }
+  .items-text  { justify-self:center; font-size:2.0vh; line-height:1.0;    }
+  .items-desc  { display:none;   } }
+
+.study-rows  { .study-core; justify-self:stretch; align-self:stretch; display:grid;
+  .study-bloc  { justify-self:center; align-self:center; font-size:2.0vh; .study-font; }
+  .study-icon  { text-align:left; font-size:2.0vh; }
+  .study-text  { text-align:left; font-size:2.0vh; line-height:1.0;    }
+  .study-desc  { display:none; }
+  .topic-bloc  { .topic-core;         font-size:1.5vh; padding-left:2.0vh; margin-top:0; }
+  .topic-ul    { .topic-ul-core;      font-size:1.5vh; padding-left:2.0vh; }
+  .topic-li    { .topic-li-core;      font-size:1.5vh; padding-top:0; display:grid; }
+  .topic-icon  { justify-self:center; font-size:1.5vh; padding-left:0.6vh; }
+  .topic-text  { justify-self:center; font-size:1.5vh; line-height:1.0;    }
+  .topic-desc  { display:none; }
+  .topic-img   { display:none; }
+  .items-ul    { .items-ul-core;      font-size:1.1vh; }
+  .items-li    { .items-li-core;      font-size:1.1vh; display:grid; }
+  .items-icon  { justify-self:center; font-size:2.0vh; padding-left:0.6vh; }
+  .items-text  { justify-self:center; font-size:2.0vh; line-height:1.0;    }
+  .items-desc  { display:none;   } }
+
+.study-study { .study-core; justify-self:stretch; align-self:stretch; display:grid;
+  .study-bloc  { justify-self:center;  align-self:center; font-size:1.7vh; padding-left:0.9vh; .study-font; }
+  .study-icon  { text-align:left;     font-size:2.0vh;  }
+  .study-text  { text-align:left;     font-size:2.0vh; line-height:1.0;    }
+  .study-desc  { display:none; }
+  .topic-bloc  { .topic-core;         font-size:1.5vh; padding-left:2.0vh; margin-top:0; display:none; }
+  .topic-ul    { .topic-ul-core;      font-size:1.5vh; padding-left:2.0vh; }
+  .topic-li    { .topic-li-core;      font-size:1.5vh; padding-top:0; }
+  .topic-icon  { text-align:left;     font-size:1.5vh; padding-left:0.6vh; }
+  .topic-text  { text-align:left;     font-size:1.5vh; line-height:1.0;    }
+  .topic-desc  { display:none; }
+  .topic-img   { display:none; }
+  .items-ul    { .items-ul-core;      font-size:1.1vh; }
+  .items-li    { .items-li-core;      font-size:1.1vh; display:grid; }
+  .items-icon  { justify-self:center; font-size:2.0vh; padding-left:0.6vh; }
+  .items-text  { justify-self:center; font-size:2.0vh; line-height:1.0;    }
+  .items-desc  { display:none;   } }
+
+.study-topic { .study-core; justify-self:stretch; align-self:stretch; display:grid;
+  .study-bloc  { justify-self:start;  align-self:start; font-size:2.0vh; padding-left:0.9vh; .study-font; }
+  .study-icon  { text-align:left;     font-size:2.0vh; padding-left:0.6vh; }
+  .study-text  { text-align:left;     font-size:1.7vh; line-height:1.0;    }
+  .study-desc  { display:none; }
+  .topic-bloc  { .topic-core;         font-size:1.5vh; padding-left:2.0vh; margin-top:0; }
+  .topic-ul    { .topic-ul-core;      font-size:1.5vh; padding-left:2.0vh; }
+  .topic-li    { .topic-li-core;      font-size:1.5vh; padding-top:0; }
+  .topic-icon  { text-align:left;     font-size:1.5vh; padding-left:0.6vh; }
+  .topic-text  { text-align:left;     font-size:1.5vh; line-height:1.0;    }
+  .topic-desc  { display:none; }
+  .topic-img   { display:none; }
+  .items-ul    { .items-ul-core;      font-size:1.1vh; }
+  .items-li    { .items-li-core;      font-size:1.1vh; display:grid; }
+  .items-icon  { justify-self:center; font-size:2.0vh; padding-left:0.6vh; }
+  .items-text  { justify-self:center; font-size:2.0vh; line-height:1.0;    }
+  .items-desc  { display:none;   } }
+
+.study-pane  { .study-core;
+  .study-bloc  { text-align:center; font-size:4.0vh;  } // position:absolute; left:  0; top:  0; width:100%; height:12%;
+  .study-icon  { text-align:left;   font-size:3.0vh; }
+  .study-text  { text-align:left;   font-size:3.0vh; }
+  .study-desc  { text-align:left;   font-size:2.5vh; padding:1.0vh; }
+  .topic-bloc  { .topic-core;       font-size:1.5vh; padding-left:2.0vh;  display:grid; grid-template-columns:8% 0.6fr 2fr; margin-top:0.3vh; }
+  .topic-ul    {                    font-size:1.5vh; padding-left:2.0vh;  display:grid; grid-template-columns:8% 1.0fr 2fr; }
+  .topic-li    { .topic-li-core;    font-size:2.5vh; padding-top:0.8vh;  }
+  .topic-icon  { text-align:left;   font-size:2.5vh; padding-left:0.6vh; }
+  .topic-text  { text-align:left;   font-size:2.5vh; line-height:1.0;    }
+  .topic-desc  { text-align:left;   font-size:2.5vh; line-height:1.0;    }
+  .topic-img   { display:block;     font-size:2.0vh; max-height:7.5vh; max-width:10vw; padding-top:1.0vh; margin:auto; }
+  .items-ul    { .items-ul-core;    font-size:1.5vh; }
+  .items-li    { .items-li-core;    font-size:1.1vh; }
+  .items-icon  { text-align:center; font-size:2.0vh; padding-left:0.6vh; }
+  .items-text  { text-align:center; font-size:2.0vh; line-height:1.0;   }
+  .items-desc  { text-align:center; font-size:2.0vh; line-height:1.0;   } }
+
+.study-texts  { .study-core;
+  .study-bloc  { text-align:left;   font-size:4.0vh; }
+  .study-icon  { text-align:left;   font-size:3.0vh; }
+  .study-text  { text-align:left;   font-size:3.0vh; }
+  .study-desc  { text-align:left;   font-size:2.0vh; }
+  .topic-bloc  { .topic-core;       font-size:1.5vh; padding-left:2.0vh;  display:grid; grid-template-columns:8% 1fr 2fr; margin-top:0.3vh; }
+  .topic-ul    {                    font-size:1.5vh; padding-left:2.0vh;  display:grid; grid-template-columns:8% 1fr 2fr; }
+  .topic-li    { .topic-li-core;    font-size:2.5vh; padding-top:0.8vh;  }
+  .topic-icon  { text-align:center; font-size:2.5vh; padding-left:0.6vh; }
+  .topic-text  { text-align:center; font-size:2.5vh; line-height:1.0;    }
+  .topic-desc  { text-align:center; font-size:2.5vh; line-height:1.0;    }
+  .topic-img   { display:block;     font-size:2.0vh; max-height:7.5vh; max-width:10vw; padding-top:1.0vh; margin:auto; }
+  .items-ul    { .items-ul-core;    font-size:1.5vh; }
+  .items-li    { .items-li-core;    font-size:1.1vh; }
+  .items-icon  { text-align:center; font-size:2.0vh; padding-left:0.6vh; }
+  .items-text  { text-align:center; font-size:2.0vh; line-height:1.0;    }
+  .items-desc  { text-align:center; font-size:2.0vh; line-height:1.0;    } }
+
+.study-stud    { .study-core;
+  .study-bloc  { text-align:center; font-size:6.0vh; }
+  .study-icon  { text-align:left;   font-size:6.0vh; }
+  .study-text  { text-align:left;   font-size:6.0vh; }
+  .study-desc  { text-align:left;   font-size:3.0vh; padding:0.3vh; }
+  .topic-bloc  { .topic-core;       font-size:1.5vh; padding-left:2.0vh;  display:grid; grid-template-columns:4% 1fr 8fr; margin-top:0.3vh; }
+  .topic-ul    { .topic-ul-core;    font-size:1.5vh; padding-left:2.0vh;  display:grid; grid-template-columns:4% 1fr 8fr; }
+  .topic-li    { .topic-li-core;    font-size:2.5vh; padding-top:0.8vh; }
+  .topic-icon  { text-align:left; font-size:2.5vh; padding-left:0.6vh; }
+  .topic-text  { text-align:left; font-size:2.5vh; line-height:1.0;    }
+  .topic-desc  { text-align:left; font-size:2.5vh; line-height:1.0;    }
+  .topic-img   { display:block;     font-size:2.0vh; max-height:25.0vh; max-width:20vw; padding-top:3.0vh; }
+  .items-ul    { .items-ul-core;    font-size:3.0vh; }
+  .items-li    { .items-li-core;    font-size:3.0vh; }
+  .items-icon  { text-align:center; font-size:3.0vh; padding-left:0.6vh; }
+  .items-text  { text-align:center; font-size:3.0vh; line-height:1.0;    }
+  .items-desc  { text-align:center; font-size:3.0vh; line-height:1.0;    } }
+
+.study-grid-core   { display:grid; color:black; font-weight:bold; .study-font; width:100%; height:100%;
+  grid-template-columns:50% 50%; grid-template-rows:350px 350px; grid-template-areas:"nw ne" "sw se";
+  justify-items:start; align-content:stretch; }
+
+.study-grid    { .study-grid-core;
+  .study-bloc  {}
+  .study-icon  { text-align:left;   font-size:3.0vh; }
+  .study-text  { text-align:left;   font-size:3.0vh; }
+  .study-desc  { text-align:left;   font-size:2.0vh; padding:0.3vh; }
+  .topic-bloc  { .topic-core;       font-size:3.6vh; grid-area:c1; margin-top:0.3vh; }
+  .topic-ul    { .topic-ul-core;    font-size:3.6vh; grid-area:c1; }
+  .topic-li    { padding-top:0.8vh; font-size:5.0vh; }
+  .topic-icon  { text-align:center; font-size:2.0vh; padding-left:0.6vh; }
+  .topic-text  { text-align:center; font-size:2.0vh; line-height:1.0;    }
+  .topic-desc  { text-align:center; font-size:2.0vh; line-height:1.0;    }
+  .topin-img   { display:block;     font-size:2.0vh; max-height:25.0vh; max-width:20vw; padding-top:3.0vh; }
+  .items-ul    { .items-ul-core;    font-size:1.5vh; }
+  .items-li    { .items-li-core;    font-size:1.1vh; }
+  .items-icon  { text-align:center; font-size:2.0vh; padding-left:0.6vh; }
+  .items-text  { text-align:center; font-size:2.0vh; line-height:1.0;    } }
+
+.arrow       { .study-font; }
+.arrow-west  { position:absolute;  left: 0;  top:33%; width:33%; height:33%; background-color:rgb( 30,179, 76);  border-radius:24px; }
+.arrow-north { position:absolute;  left:33%; top: 0;  width:33%; height:33%; background-color:rgb(230,230, 40); border-radius:24px; }
+.arrow-east  { position:absolute;  left:66%; top:33%; width:33%; height:33%; background-color:rgb(230,127, 76);  border-radius:24px; }
+.arrow-south { position:absolute;  left:33%; top:66%; width:33%; height:33%; background-color:rgb(230,169, 49); border-radius:24px; }
+.arrow-prac  { position:absolute;  left:33%; top:33%; width:33%; height:33%; border-radius:24px; display:grid; }
+
+.arrow-wrap  { justify-self:stretch; align-self:stretch; display:grid; }
+.arrow-bloc  { justify-self:center;  align-self:center;  display:grid; }
+.arrow-icon  { justify-self:center;  font-size:2.0vh;    padding-left:0.6vh; }
+.arrow-text  { justify-self:center;  font-size:2.0vh;    line-height:1.0;  font-weight:bold; }
+.arrow-desc  { justify-self:start;   font-size:1.5vh;;   padding:0.3vh; }
+
+.pivot       { .study-font; display:grid; }
+.pivot-wrap  { justify-self:stretch; align-self:stretch; display:grid; }
+.pivot-bloc  { justify-self:center;  align-self:center;  display:grid; }
+.pivot-icon  { justify-self:center;  font-size:2.0vh;    padding-left:0.6vh; }
+.pivot-text  { justify-self:center;  font-size:2.0vh;    line-height:1.0; font-weight:bold; }
+.study-desc  { justify-self:start;   font-size:1.5vh; }
+

@@ -8,7 +8,7 @@ class Data
   Data.local     = "http://localhost:63342/muse/public/"
   Data.localJSON = "http://localhost:63342/muse/public/json"
 
-  Util.noop( Data.hosted, Data.expandStudys, Data.syncJSON )
+  Util.noop( Data.hosted, Data.syncJSON, Data.planeData )
 
   # ---- Read JSON with batch async
 
@@ -25,7 +25,8 @@ class Data
   @batchJSON:( obj, batch, callback, create=null ) ->
     return if Util.jQueryHasNotBeenLoaded()
     url      = Data.baseUrl() + obj.url
-    settings = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json', accepts:'application/json' }
+    settings = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json',
+      accepts:'application/json' }
     settings.success = ( data,  status, jqXHR ) =>
       Util.noop( status, jqXHR  )
       obj['data'] =     if Util.isFunc(create) then create( data, obj.type ) else data
@@ -45,7 +46,8 @@ class Data
   @asyncJSON:( url, callback ) ->
     return if Util.jQueryHasNotBeenLoaded()
     url = Data.baseUrl() + url
-    settings  = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json', accepts:'application/json' }
+    settings  = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json',
+      accepts:'application/json' }
     settings.success = ( data,  status, jqXHR ) =>
       Util.noop( status, jqXHR  )
       callback( data )

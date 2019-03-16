@@ -1,0 +1,35 @@
+
+.texts-font    { font-family:Roboto, sans-serif; }
+.texts-wrap    { } // Replaced by core with texts-view texts-pane
+.texts-core    { display:table-cell; vertical-align:middle; text-align:left; color:black; font-weight:bold; .texts-font;
+                 position:absolute; left:0; top:0; width:100%; height:100%; }
+
+.texts-view    { .texts-core;
+  h2             { text-align:center; margin-top:0.2em; margin-bottom:0; }
+  .paragraph     { padding:0.2em;     }
+  .hdlist        { display:none; }
+}
+
+.texts-pane    { .texts-core;
+  .sect          {}
+  h2             { text-align:center; margin-top:0.2em; margin-bottom:0; }
+    .paragraph     { padding:0.2em; }
+    .hdlist        { display:table;  background:none;
+      table          { border-collapse:collapse; }
+      tr             {  }
+      .hdlist1       { padding:0.2em; font-weight: bold; }
+      .hdlist2       { padding:0.2em;
+        p              { margin:0 } } }
+}
+
+.texts-stud    { .texts-core;
+  .sect          {}
+  h2             { text-align:center; margin-top:0.2em; margin-bottom:0; }
+  .paragraph     { padding:0.2em; }
+  .hdlist        { display:table;  background:none;
+    table          { border-collapse:collapse; }
+    tr             {  }
+    .hdlist1       { padding:0.2em; font-weight: bold; }
+    .hdlist2       { padding:0.2em;
+      p              { margin:0 } } }
+}
