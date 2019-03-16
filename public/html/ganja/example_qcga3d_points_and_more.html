@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <SCRIPT SRC="../../js/lib/math/ganja.js"></SCRIPT>
+</head>
+<BODY><SCRIPT>
+// Create a Clifford Algebra with 9,6 metric for 3D QCGA. 
+Algebra(9,6,()=>{ 
+
+  // http://www-igm.univ-mlv.fr/~vnozick/publications/breuils_ENGAGE_AACA_2018/breuils_ENGAGE_AACA_2018.pdf
+
+  // Quadric Conformal CGA allows for natural generation of quadric objects
+  // by wedging 9 points. 
+  
+  // Defining the null basis - bit cumbersome .. 
+    var ei1=1e04+1e10,   ei2=1e05+1e11,   ei3=1e06+1e12,   ei4=1e07+1e13,   ei5=1e08+1e14,   ei6=1e09+1e15,
+        eo1=.5e10-.5e04, eo2=.5e11-.5e05, eo3=.5e12-.5e06, eo4=.5e13-.5e07, eo5=.5e14-.5e08, eo6=.5e15-.5e09;
+  
+  // Hexa-orig and inf, Penta-orig and inf, PSS, Euclidean PSS and inverse PSS.
+    var Ii  = ei1^ei2^ei3^ei4^ei5^ei6,          Io   = eo1^eo2^eo3^eo4^eo5^eo6,
+        pIi = (ei1-ei2)^(ei2-ei3)^ei4^ei5^ei6,  pIo  = (eo1-eo2)^(eo2-eo3)^eo4^eo5^eo6,
+        PSS = 1e010203040506070809101112131415, PSSe = 1e010203, PSSi = -PSS;
+        
+  // Create a quadric conformal point. (written as dot product .. faster)
+    var pv = [1e01,1e02,1e03,ei1,ei2,ei3,ei4,ei5,ei6,eo1+eo2+eo3],
+        p  = (x,y,z)=> [x,y,z,.5*x**2,.5*y**2,.5*z**2,x*y,x*z,y*z,1]*pv;          
+  // for the viz, we need the same in pure basis blades. (all coeffs as func of x,y,z)
+    var pviz = ["x","y","z",".5*x*x-.5",".5*y*y-.5",".5*z*z-.5","x*y","x*z","y*z",
+                            ".5*x*x+.5",".5*y*y+.5",".5*z*z+.5","x*y","x*z","y*z"]
+  
+  // Use the OP Length to visualize the object.    
+    var opns = (a,b)=>(a^b).Length;
+
+  // Create some points. 
+    var p1=p(0,1,0), p2=p(0,-1,0), p3=p(1,0,0), p4=p(0,0,1);
+    var q1=p(0,1.5+.35,.5), q2=p(0,-.5+.35,.5), q3=p(1.3,.5+.35,.5), q4=p(0,.5+.35,1.6);
+    
+  // wedge them into a quadriconformal sphere, next tweak into ellipsoid (grade 14)
+    var sphere = (p1^p2^p3^p4^pIi^pIo).Normalized, sphere2 = (q1^q2^q3^q4^pIi^pIo).Normalized;
+    sphere[14][10]*=.2; sphere[14][11]*=6; sphere = sphere.Normalized;
+    sphere2[14][12]*=.4; sphere2[14][10]*=8; sphere2 = sphere2.Normalized;
+    
+  // Graph and animate
+    document.body.appendChild(this.graph(()=>{
+      var s = 0+sphere, s2 = 0+sphere2;                    // copy originals
+      s[14][4]+=0.2*Math.sin(performance.now()/1000);      // animate
+      s[14][10]+=0.1+Math.sin(performance.now()/1491);
+      s2[14][11]+=0.5*Math.sin(performance.now()/790);
+      s2[14][13]+=Math.sin(performance.now()/1300);
+      var c = (s&s2).Normalized;                           // intersect
+      return [0x8800ff,s,0xff8800,c]                       // render
+    },{animate:true,up:pviz}))
+});
+</SCRIPT></BODY>
+</html>

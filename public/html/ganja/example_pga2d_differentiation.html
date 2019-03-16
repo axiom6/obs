@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <SCRIPT SRC="../../js/lib/math/ganja.js"></SCRIPT>
+</head>
+<BODY><SCRIPT>
+// Create a Clifford Algebra with 2,0,1 metric. 
+Algebra(2,0,1,()=>{
+  
+  // The PGA2D framework cannonicaly embeds (via e01 and e02) a vector version of dual numbers
+  // that can be used for automatic differentiation.
+
+  var dx = 1e01, dy = 1e02;
+    
+  // As an example, we calculate partial derivatives for the function 3x^2 - 2y^3
+  // you can change this function to any polynomial in x and y .. the partial derivatives
+  // follow automatically (and are numericaly stable up to machine precision.)
+  
+  var f = (x,y)=>3*x*x - 2*y*y*y;
+  
+  // Calculate the function value and its partial derivatives at (5,2)
+
+  var result = f( 5+dx, 2+dy );
+  
+  // Output the result
+  
+  document.body.innerHTML += `<PRE>
+    f(5,2)   = ${result.s}
+    f'x(5,2) = ${result.e01}
+    f'y(5,2) = ${result.e02}
+  </PRE>`;
+
+  // Since we have 4 basic blades that square to 0 .. 
+  var dx = 1e0, dy = 1e01, dz = 1e02, dw = 1e012;
+  
+  // We can do the same for functions in 4 variables.
+  var g = (x,y,z,w)=>x*x*x*x - y*y*y + z*z - w*2;
+  
+  var result = g(1+dx,2+dy,3+dz,4+dw);
+   
+  document.body.innerHTML += `<PRE>
+    g(1,2,3,4)   = ${result.s}
+    g'x(1,2,3,4) = ${result.e0}
+    g'y(1,2,3,4) = ${result.e01}
+    g'z(1,2,3,4) = ${result.e02}
+    g'w(1,2,3,4) = ${result.e012}
+  </PRE>`;
+  
+
+});
+</SCRIPT></BODY>

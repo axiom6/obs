@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <SCRIPT SRC="../../js/lib/math/ganja.js"></SCRIPT>
+</head>
+<BODY><SCRIPT>
+// Create a Clifford Algebra with 2,0,1 metric.
+Algebra(2,0,1,()=>{
+
+  // The Euler line connects several important points in any non equilateral triangle.
+
+  // Not many identities needed..
+  var point      = (x,y)=>1e12-x*1e02+y*1e01;
+  
+  // Three points.
+  var A=point(-1.5,0.5), B=point(0.5,-1.5), C=point(1,0.5),
+  
+  // The edges
+      a=()=>B&C,b=()=>C&A,c=()=>A&B,
+
+  // The orthocenter
+     oa=()=>a<<A, ob=()=>b<<B, oc=()=>c<<C, ortho=()=>oa^ob,
+  
+  // The circumcenter
+      ca=()=>c<<(A+B), cb=()=>a<<(B+C), cc=()=>b<<(C+A), circum=()=>ca^cb,
+      
+  // The centroid      
+      centroid = ()=>A+B+C,
+  
+  // The Euler line      
+      line = ()=>ortho&circum;
+   
+  document.body.appendChild(this.graph([
+      0xFFFFEE,[A,B,C],                        // triangle
+      0xFFAAAA,oa,ob,oc,ortho,                 // orthocenter
+      0x88AA88,ca,cb,cc,circum,                // circumcenter
+      0x8888FF,centroid,line,"Euler Line",     // centroid and euler line
+      0x444444,A,B,C                           // triangle vertices
+      ],{grid:true}));
+});
+</SCRIPT></BODY>
