@@ -27,11 +27,11 @@ class UI
                 UI.SelectPane,  UI.SelectStudy, UI.SelectTopic,
                 UI.SelectItems, UI.AddChoice,   UI.DelChoice ]
 
-  constructor:( @stream, @specs, @planeName, @navbs=null ) ->
+  constructor:( @stream, @specs, @uiId, @navbs=null ) ->
 
     @pages  = {}
     @cname  = 'Study'
-    @$text  = UI.$empty
+    #$text  = UI.$empty
     @navb   = new Navb( @, @stream, @navbs ) if @navbs?
     @tocs   = new Tocs( @, @stream, @specs ) if UI.hasTocs
     @view   = new View( @, @stream, @specs )
@@ -41,7 +41,7 @@ class UI
      @pages[name] = page
 
   ready:() ->
-    $('#'+@htmlId('App')).html( @html() )
+    $('#'+@htmlId(@uiId)).html( @html() )
     @navb.ready()  if @navbs?
     @tocs.ready()  if UI.hasTocs
     @view.ready()

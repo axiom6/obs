@@ -28,7 +28,6 @@ class Navb
         spec.$    = $('#'+spec.htmlId)
         eventType = if spec.subject is 'Submit' then 'keyup' else 'click'
         elem      = Dom.element(spec.$)
-        # console.log( 'Navb.publish Spec', spec )
         if Util.isDef(elem)
           @stream.event( spec.subject, spec.topic, Dom.element(spec.$), eventType ) if spec.topic?
         else
@@ -36,8 +35,7 @@ class Navb
       if spec.items?
         for item in spec.items when item.htmlId?
           item.$ = $('#'+item.htmlId)
-          elem   = Dom.element(item.$)
-          # console.log( 'Navb.publish Item', item )
+          elem   = Util.element(item.$)
           if Util.isDef(elem)
             @stream.event( item.subject, item.topic, elem, 'click' ) if item.topic?
           else
@@ -129,4 +127,4 @@ class Navb
     spec.htmlId = @id( spec )
     """<li class="navb-contact"><a id="#{spec.htmlId}"><i class="fa #{spec.icon} fa-lg"></i> #{spec.name}</a></li>"""
 
-export default Navb
+`export default Navb`

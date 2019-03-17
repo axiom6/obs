@@ -7,12 +7,13 @@ import Dom  from '../ui/Dom.js'
 class Basic
 
   constructor:( @stream, @ui, @pane, @cname ) ->
-    @ui.addPage( @pane.name, @ ) if @ui.planeName is 'App'  # Signifies that Page is not present
+    @ui.addPage( @pane.name, @ ) if @ui.uiId isnt 'Muse'  # Signifies that Page is not present
     @spec = @pane.spec
     @has  = true
     @btn  = true
     @$    = $()
-    Util.noop( @hasStudy, @anyTopics, @hasItems )
+    Util.noop( @hasStudy, @anyTopics, @hasItems, @scoreClass, @isDimOrRow, @isPer )
+    Util.noop( @bloc, @tesc, @abst, @setFontSize, @hasTopics,  )
 
   ready:() ->
     console.error( 'Basic.ready() must be overriden' )
@@ -38,8 +39,8 @@ class Basic
 
   # Need to improve naming conventions
   isPlane:(    spec ) -> @isDim(spec) and @isRow(spec)
-  isDim:(      spec ) -> @spec.row    is 'Dim' and @spec.column isnt 'Row'
-  isRow:(      spec ) -> @spec.column is 'Row'
+  isDim:(      spec ) -> @spec.row        is 'Dim' and @spec['column'] isnt 'Row'
+  isRow:(      spec ) -> @spec['column']  is 'Row'
   isDimOrRow:( spec ) -> @isDim(spec) or @isRow(spec)
   isCol:(      spec ) -> @isDim(spec) and not @isRow(spec)
   isPer:(      spec ) -> @isRow(spec) and not @isDim(spec)
@@ -156,4 +157,4 @@ class Basic
       return true
     false
 
-export default Basic
+`export default Basic`

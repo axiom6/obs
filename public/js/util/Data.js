@@ -180,11 +180,11 @@ Data = (function() {
 
   Data.hosted = "https://ui-48413.firebaseapp.com/";
 
-  Data.local = "http://localhost:63342/muse/public/";
+  Data.local = "http://localhost:63342/obs/public/";
 
-  Data.localJSON = "http://localhost:63342/muse/public/json";
+  Data.localJSON = "http://localhost:63342/obs/public/json";
 
-  Util.noop(Data.hosted, Data.expandStudys, Data.syncJSON);
+  Util.noop(Data.hosted, Data.syncJSON, Data.planeData);
 
   Data.Databases = {
     color: {

@@ -5,8 +5,8 @@ import Util from '../util/Util.js'
 class Data
 
   Data.hosted    = "https://ui-48413.firebaseapp.com/"
-  Data.local     = "http://localhost:63342/muse/public/"
-  Data.localJSON = "http://localhost:63342/muse/public/json"
+  Data.local     = "http://localhost:63342/obs/public/"
+  Data.localJSON = "http://localhost:63342/obs/public/json"
 
   Util.noop( Data.hosted, Data.syncJSON, Data.planeData )
 
@@ -25,8 +25,7 @@ class Data
   @batchJSON:( obj, batch, callback, create=null ) ->
     return if Util.jQueryHasNotBeenLoaded()
     url      = Data.baseUrl() + obj.url
-    settings = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json',
-      accepts:'application/json' }
+    settings = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json', accepts:'application/json' }
     settings.success = ( data,  status, jqXHR ) =>
       Util.noop( status, jqXHR  )
       obj['data'] =     if Util.isFunc(create) then create( data, obj.type ) else data
@@ -46,8 +45,7 @@ class Data
   @asyncJSON:( url, callback ) ->
     return if Util.jQueryHasNotBeenLoaded()
     url = Data.baseUrl() + url
-    settings  = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json',
-      accepts:'application/json' }
+    settings  = { url:url, type:'GET', dataType:'json', processData:false, contentType:'application/json', accepts:'application/json' }
     settings.success = ( data,  status, jqXHR ) =>
       Util.noop( status, jqXHR  )
       callback( data )

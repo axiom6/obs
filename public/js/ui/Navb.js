@@ -45,7 +45,6 @@ Navb = class Navb {
         spec.$ = $('#' + spec.htmlId);
         eventType = spec.subject === 'Submit' ? 'keyup' : 'click';
         elem = Dom.element(spec.$);
-        // console.log( 'Navb.publish Spec', spec )
         if (Util.isDef(elem)) {
           if (spec.topic != null) {
             this.stream.event(spec.subject, spec.topic, Dom.element(spec.$), eventType);
@@ -62,8 +61,7 @@ Navb = class Navb {
             continue;
           }
           item.$ = $('#' + item.htmlId);
-          elem = Dom.element(item.$);
-          // console.log( 'Navb.publish Item', item )
+          elem = Util.element(item.$);
           if (Util.isDef(elem)) {
             if (item.topic != null) {
               this.stream.event(item.subject, item.topic, elem, 'click');

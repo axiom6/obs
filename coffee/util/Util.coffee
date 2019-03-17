@@ -2,7 +2,6 @@
 class Util
 
   constructor:() ->
-    @dummy = ""
     Util.noop( Util.loadScript, Util.hasMethod, Util.dependsOn, Util.setInstance, Util.getInstance )
     Util.noop( Util.toError, Util.logJSON, Util.isNot, Util.isVal, Util.isntStr )
     Util.noop( Util.inIndex, Util.isEvent, Util.atArray, Util.atLength, Util.isStrInteger )
@@ -10,6 +9,7 @@ class Util
     Util.noop( Util.resizeTimeout, Util.eventErrorCode, Util.toAlpha, Util.hashCode, Util.pdfCSS )
     Util.noop( Util.padStr, Util.isoDateTime, Util.toHMS, Util.toInt, Util.hex32 )
     Util.noop( Util.toFloat, Util.toCap, Util.match_test, Util.svgId, Util.saveFile )
+    Util.noop( Util.alert, Util.copyProperties, Util.clearHtmlIds, Util.parseURI, Util.unCap, Util.toObjects )
 
   Util.myVar      =  'myVar'
   Util.skipReady  =  false

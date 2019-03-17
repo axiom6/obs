@@ -2,15 +2,18 @@
 import Util   from '../util/Util.js'
 import Data   from '../util/Data.js'
 import Stream from '../util/Stream.js'
+import UI     from '../ui/UI.js'
+import Icons  from '../ui/Icons.js'
 
 class Obs
 
   Data.local  = "http://localhost:63342/obs/public/"
   Data.hosted = "https://ui-48413.firebaseapp.com/"
-  Data.asyncJSON( "json/basic/Obs.json", Obs.init )
+  Data.asyncJSON( "json/app/Obs.json", Obs.init )
 
-  @init = ( data ) ->
-    App.Spec   = Data.createPracs( data )
+  Obs.init = ( data ) ->
+    # console.log( window )
+    Obs.Specs  = data
     UI.ncol    = 36
     UI.nrow    = 36
     UI.hasPack = false
@@ -18,17 +21,18 @@ class Obs
     UI.hasLays = true
     Util.ready ->
       subjects = ["Ready","Select","Choice","Test"]
-      subjects = subjects.concat( App.NavbSubjects )
+      subjects = subjects.concat( Obs.NavbSubjects )
       infoSpec = { subscribe:false, publish:false, subjects:["Select","Choice","Test"]}
       stream   = new Stream( subjects, infoSpec )
-      ui       = new UI(  stream,  App.Spec, 'App', App.NavbSpecs )
-      app      = new App( stream, ui )
+      ui       = new UI(  stream,  Obs.Specs, 'Obs', Obs.NavbSpecs )
+      app      = new Obs( stream, ui )
       app.onReady()
+
       return
     return
 
   constructor:( @stream, @ui ) ->
-    @stream.subscribe( "Ready", "App", () => @onReady() )
+    @stream.subscribe( "Ready", "Obs", () => @onReady() )
 
   onReady:() =>
     @createPages()
@@ -37,14 +41,13 @@ class Obs
 
   createPages:() ->
     for pane in @ui.view.panes
-      # console.log( 'App.createPages()', pane.name )
       pane.page = new Icons( @ui.stream, @ui, pane )
     return
 
-  App.NavbSubjects = ["Search","Contact","Settings","SignOn"]
-  @NavbSpecs    = [
+  Obs.NavbSubjects = ["Search","Contact","Settings","SignOn"]
+  Obs.NavbSpecs    = [
     { type:"NavBarLeft" }
-    { type:"Item",      name:"Home",   icon:"fa-home", topic:UI.toTopic("View",'Navb',UI.SelectView), subject:"Select" }
+    { type:"Item", name:"Home",icon:"fa-home",topic:UI.toTopic("View",'Navb',UI.SelectView),subject:"Select" }
     { type:"NavBarEnd" }
     { type:"NavBarRight"}
     { type:"Search",    name:"Search",    icon:"fa-search", size:"10", topic:'Search', subject:"Search" }

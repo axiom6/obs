@@ -15,14 +15,15 @@ Basic = class Basic {
     this.ui = ui;
     this.pane = pane;
     this.cname = cname;
-    if (this.ui.planeName === 'App') { // Signifies that Page is not present
+    if (this.ui.uiId !== 'Muse') { // Signifies that Page is not present
       this.ui.addPage(this.pane.name, this);
     }
     this.spec = this.pane.spec;
     this.has = true;
     this.btn = true;
     this.$ = $();
-    Util.noop(this.hasStudy, this.anyTopics, this.hasItems);
+    Util.noop(this.hasStudy, this.anyTopics, this.hasItems, this.scoreClass, this.isDimOrRow, this.isPer);
+    Util.noop(this.bloc, this.tesc, this.abst, this.setFontSize, this.hasTopics);
   }
 
   ready() {
@@ -69,11 +70,11 @@ Basic = class Basic {
   }
 
   isDim(spec) {
-    return this.spec.row === 'Dim' && this.spec.column !== 'Row';
+    return this.spec.row === 'Dim' && this.spec['column'] !== 'Row';
   }
 
   isRow(spec) {
-    return this.spec.column === 'Row';
+    return this.spec['column'] === 'Row';
   }
 
   isDimOrRow(spec) {

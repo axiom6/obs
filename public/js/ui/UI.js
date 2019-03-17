@@ -11,17 +11,17 @@ import View from '../ui/View.js';
 
 UI = (function() {
   class UI {
-    constructor(stream, specs, planeName, navbs = null) {
+    constructor(stream, specs, uiId, navbs = null) {
       this.pagesReady = this.pagesReady.bind(this);
       this.resize = this.resize.bind(this);
       this.stream = stream;
       this.specs = specs;
-      this.planeName = planeName;
+      this.uiId = uiId;
       this.navbs = navbs;
       this.pages = {};
       this.cname = 'Study';
-      this.$text = UI.$empty;
       if (this.navbs != null) {
+        //$text  = UI.$empty
         this.navb = new Navb(this, this.stream, this.navbs);
       }
       if (UI.hasTocs) {
@@ -36,7 +36,7 @@ UI = (function() {
     }
 
     ready() {
-      $('#' + this.htmlId('App')).html(this.html());
+      $('#' + this.htmlId(this.uiId)).html(this.html());
       if (this.navbs != null) {
         this.navb.ready();
       }

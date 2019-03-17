@@ -6,10 +6,15 @@ import Data from '../util/Data.js';
 
 import Stream from '../util/Stream.js';
 
+import UI from '../ui/UI.js';
+
+import Icons from '../ui/Icons.js';
+
 Obs = (function() {
   class Obs {
     static init(data) {
-      App.Spec = Data.createPracs(data);
+      // console.log( window )
+      Obs.Specs = data;
       UI.ncol = 36;
       UI.nrow = 36;
       UI.hasPack = false;
@@ -18,15 +23,15 @@ Obs = (function() {
       Util.ready(function() {
         var app, infoSpec, stream, subjects, ui;
         subjects = ["Ready", "Select", "Choice", "Test"];
-        subjects = subjects.concat(App.NavbSubjects);
+        subjects = subjects.concat(Obs.NavbSubjects);
         infoSpec = {
           subscribe: false,
           publish: false,
           subjects: ["Select", "Choice", "Test"]
         };
         stream = new Stream(subjects, infoSpec);
-        ui = new UI(stream, App.Spec, 'App', App.NavbSpecs);
-        app = new App(stream, ui);
+        ui = new UI(stream, Obs.Specs, 'Obs', Obs.NavbSpecs);
+        app = new Obs(stream, ui);
         app.onReady();
       });
     }
@@ -35,7 +40,7 @@ Obs = (function() {
       this.onReady = this.onReady.bind(this);
       this.stream = stream1;
       this.ui = ui1;
-      this.stream.subscribe("Ready", "App", () => {
+      this.stream.subscribe("Ready", "Obs", () => {
         return this.onReady();
       });
     }
@@ -50,7 +55,6 @@ Obs = (function() {
       ref = this.ui.view.panes;
       for (i = 0, len = ref.length; i < len; i++) {
         pane = ref[i];
-        // console.log( 'App.createPages()', pane.name )
         pane.page = new Icons(this.ui.stream, this.ui, pane);
       }
     }
@@ -61,9 +65,9 @@ Obs = (function() {
 
   Data.hosted = "https://ui-48413.firebaseapp.com/";
 
-  Data.asyncJSON("json/basic/Obs.json", Obs.init);
+  Data.asyncJSON("json/app/Obs.json", Obs.init);
 
-  App.NavbSubjects = ["Search", "Contact", "Settings", "SignOn"];
+  Obs.NavbSubjects = ["Search", "Contact", "Settings", "SignOn"];
 
   Obs.NavbSpecs = [
     {
