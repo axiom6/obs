@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Embed</title>
+    <meta charset="utf-8">
+    <meta name="description" content="ObservableHQ Notebooks">
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="../../css/app/inspector.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id="Embed"></div>
+    <script type="module">
+      import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1?module";
+      import notebook from "../../note/embed.js";
+      Runtime.load( notebook, Inspector['into']( document.querySelector("#Embed") ) );
+    </script>
+  </body>
+</html>
